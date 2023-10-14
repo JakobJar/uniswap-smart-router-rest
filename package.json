@@ -1,0 +1,19 @@
+{
+  "name": "uniswap-smart-router-rest",
+  "version": "1.0.0",
+  "description": "Rest api for interacting with the smart-order-router of uniswap",
+  "main": "src/app.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./bin/app.js",
+    "dev": "ts-node ./src/app.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.8.6",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
