@@ -1,7 +1,7 @@
 {
   "name": "uniswap-smart-router-rest",
   "version": "1.0.0",
-  "description": "Rest api for interacting with the smart-order-router of uniswap",
+  "description": "Self-hosted REST API for interacting with the smart-order-router of uniswap",
   "main": "src/app.ts",
   "author": "Jakob S.",
   "license": "MIT",
