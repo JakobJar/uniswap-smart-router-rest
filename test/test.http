@@ -1,14 +1,20 @@
-GET http://localhost:3000
+# Testing of the functionality (Change the port if required)
+GET http://localhost:3000/route
 content-type: application/json
 
 {
-  "amountIn": 200,
-  "tokenIn": {
+  "amount": 200,
+  "tradeType": 0,
+  "currencyAmount": {
     "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-    "decimals": 18
+    "decimals": 18,
+    "symbol": "USDT",
+    "name": "Tether USD"
   },
-  "tokenOut": {
+  "currency": {
     "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
-    "decimals": 18
+    "decimals": 18,
+    "symbol": "AXS",
+    "name": "Axie Infinity Shard"
   }
 }

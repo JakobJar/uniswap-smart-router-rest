@@ -17,14 +17,14 @@ app.use(express.json());
 const jsonRpcClient = new JsonRpcProvider(jsonRpcURL, chainId);
 const router = new AlphaRouter({chainId, provider: jsonRpcClient});
 
-app.get('/', (req, res) => {
+app.get('/route', (req, res) => {
     const reqBody = req.body;
 
-    const tokenIn = parseToken(reqBody.tokenIn, chainId);
-    const tokenOut = parseToken(reqBody.tokenOut, chainId);
+    const currencyAmount = parseToken(reqBody.currencyAmount, chainId);
+    const currency = parseToken(reqBody.currency, chainId);
     const tradeType = reqBody.tradeType as TradeType || TradeType.EXACT_INPUT;
 
-    router.route(CurrencyAmount.fromRawAmount(tokenIn, reqBody.amountIn), tokenOut, tradeType)
+    router.route(CurrencyAmount.fromRawAmount(currencyAmount, reqBody.amount), currency, tradeType)
         .then(route => {
             if (!route) {
                 res.status(404);
@@ -34,7 +34,8 @@ app.get('/', (req, res) => {
             res.json(route);
         }).catch(err => {
         res.status(500);
-        res.send("Internal server error");
+        res.send("Internal server error")
+        console.log(err);
     });
 });
 
