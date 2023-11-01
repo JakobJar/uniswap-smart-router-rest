@@ -3,6 +3,7 @@ import {JsonRpcProvider} from '@ethersproject/providers';
 import {AlphaRouter, CurrencyAmount} from '@uniswap/smart-order-router'
 import {TradeType} from "@uniswap/sdk-core";
 import dotenv from 'dotenv';
+import cors from 'cors';
 import {parseToken} from "./utils";
 
 dotenv.config();
@@ -13,11 +14,12 @@ const jsonRpcURL = process.env.JSON_RPC_URL;
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const jsonRpcClient = new JsonRpcProvider(jsonRpcURL, chainId);
 const router = new AlphaRouter({chainId, provider: jsonRpcClient});
 
-app.get('/route', (req, res) => {
+app.post('/route', (req, res) => {
     const reqBody = req.body;
 
     const currencyAmount = parseToken(reqBody.currencyAmount, chainId);

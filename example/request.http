@@ -1,19 +1,19 @@
-GET http://localhost:3000/route
+POST http://localhost:8080/route
 content-type: application/json
 
 {
-  "amount": 200,
+  "amount": 5000000000000000000,
   "tradeType": 0,
   "currencyAmount": {
-    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "address": "0x6f14C02Fc1F78322cFd7d707aB90f18baD3B54f5",
     "decimals": 18,
-    "symbol": "USDT",
-    "name": "Tether USD"
+    "symbol": "USDC",
+    "name": "USDC"
   },
   "currency": {
-    "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+    "address": "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
     "decimals": 18,
-    "symbol": "AXS",
-    "name": "Axie Infinity Shard"
+    "symbol": "WETH",
+    "name": "Wrapped Ether"
   }
 }
