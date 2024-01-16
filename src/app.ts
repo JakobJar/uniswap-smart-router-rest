@@ -12,6 +12,8 @@ const port = Number(process.env.PORT) || 3000;
 const chainId = Number(process.env.CHAIN_ID) || 1;
 const jsonRpcURL = process.env.JSON_RPC_URL;
 
+console.log(`Using chainId ${chainId} and JSON RPC URL ${jsonRpcURL}`);
+
 const app = express();
 app.use(express.json());
 app.use(cors());
